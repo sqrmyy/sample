@@ -11,6 +11,7 @@ import {
   Text,
   View
 } from 'react-native';
+import TodoInput from './src/component/TodoInput';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -23,15 +24,9 @@ export default class App extends Component<{}> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          React Nativeへようこそ!
-        </Text>
-        <Text style={styles.instructions}>
-          React Nativeで広がるアプリの世界
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
+        <View style={styles.main}>
+          <TodoInput />
+        </View>
       </View>
     );
   }
@@ -40,19 +35,13 @@ export default class App extends Component<{}> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#333',
+    paddingTop: 40,
+    alignItems: 'center',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    color: '#FFF',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#FFF',
-    marginBottom: 5,
-  },
+  main: {
+    flex: 1,
+    maxWidth: 400,
+    alignItems: 'center',
+  }
 });
