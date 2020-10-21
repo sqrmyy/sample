@@ -34,9 +34,16 @@ const styles = StyleSheet.create({
 
 export default class TodoInput extends Component {
   render() {
+    const {
+      onPress,
+    } = this.props;
+
     return (
       <View style={styles.container}>
-        <TextInput style={styles.textInput}/>
+        <TextInput
+          style={styles.textInput}
+          onChangeText={text => onPress(text)}
+        />
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>追加</Text>
         </TouchableOpacity>
